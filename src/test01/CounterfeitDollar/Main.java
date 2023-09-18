@@ -1,4 +1,4 @@
-package CounterfeitDollar;
+package test01.CounterfeitDollar;
 
 import java.util.HashMap;
 import java.util.Map;
