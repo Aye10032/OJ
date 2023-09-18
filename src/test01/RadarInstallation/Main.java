@@ -1,4 +1,4 @@
-package RadarInstallation;
+package test01.RadarInstallation;
 
 import java.util.*;
 
@@ -21,27 +21,10 @@ class Point {
 
 public class Main {
 
-    private static double getDis(double d, double y) {
-        return Math.sqrt(Math.pow(d, 2) - Math.pow(y, 2));
+    Main() {
     }
 
-    private static int cal(List<Point> ranges) {
-        int count = 1;
-        double now_right = ranges.get(0).right;
-
-        for (Point pos : ranges) {
-            if (pos.left > now_right) {
-                ++count;
-                now_right = pos.right;
-            } else {
-                now_right = Math.min(now_right, pos.right);
-            }
-        }
-
-        return count;
-    }
-
-    public static void main(String[] args) {
+    private void run(){
         Scanner scanner = new Scanner(System.in);
         int count = 0;
         List<Point> ranges = new ArrayList<Point>();
@@ -80,5 +63,30 @@ public class Main {
                 System.out.println("Case " + count + ": -1");
             }
         }
+    }
+
+    private double getDis(double d, double y) {
+        return Math.sqrt(Math.pow(d, 2) - Math.pow(y, 2));
+    }
+
+    private int cal(List<Point> ranges) {
+        int count = 1;
+        double now_right = ranges.get(0).right;
+
+        for (Point pos : ranges) {
+            if (pos.left > now_right) {
+                ++count;
+                now_right = pos.right;
+            } else {
+                now_right = Math.min(now_right, pos.right);
+            }
+        }
+
+        return count;
+    }
+
+    public static void main(String[] args) {
+        Main demo = new Main();
+        demo.run();
     }
 }
