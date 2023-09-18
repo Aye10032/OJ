@@ -1,4 +1,4 @@
-package Humidex;
+package test01.Humidex;
 
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
