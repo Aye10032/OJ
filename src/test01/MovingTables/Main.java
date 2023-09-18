@@ -1,4 +1,4 @@
-package MovingTables;
+package test01.MovingTables;
 
 import java.util.ArrayList;
 import java.util.List;
