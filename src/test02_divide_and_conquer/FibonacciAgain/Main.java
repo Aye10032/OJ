@@ -58,7 +58,6 @@ public class Main {
 
         while (scanner.hasNext()) {
             int n = scanner.nextInt();
-
             System.out.println(n % 4 == 2 ? "yes" : "no");
         }
 
