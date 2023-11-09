@@ -32,7 +32,7 @@ public class Main {
             if (cols == 1) {
                 for (int i = 0; i < rows; i++) {
                     int next_num = scanner.nextInt();
-                    if (min> next_num){
+                    if (min > next_num) {
                         min = next_num;
                         index = i;
                     }
@@ -42,7 +42,7 @@ public class Main {
                 continue;
             }
 
-            if (rows == 1){
+            if (rows == 1) {
                 min = 0;
                 for (int i = 0; i < cols - 1; i++) {
                     System.out.print(1 + " ");
@@ -81,9 +81,9 @@ public class Main {
                     opt[j][i] += min_choice[0];
                     path[j][i] = min_choice[1];
 
-                    if (i == 0 && min > opt[i][0]) {
-                        min = opt[i][0];
-                        index = i;
+                    if (i == 0 && min > opt[j][0]) {
+                        min = opt[j][0];
+                        index = j;
                     }
                 }
             }
