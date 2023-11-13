@@ -20,10 +20,10 @@ public class Main {
 
     static int N, M;
 
-    static Integer[] a = new Integer[1100];
-    static Integer[] num = new Integer[1100];
-    static long[][] f = new long[1100][1100];
-    static long[][] opt = new long[1100][1100];
+    static Integer[] a = new Integer[1002];
+    static Integer[] num = new Integer[1002];
+    static long[][] f = new long[1002][1002];
+    static long[][] opt = new long[1002][1002];
 
     static int MOD = 1000000007;
 
