@@ -31,22 +31,11 @@ public class Main {
 
             tasks = new Task[n];
             for (int i = 0; i < n; i++) {
-                int T = Reader.nextInt();
-                int S = Reader.nextInt();
-                tasks[i] = new Task(S, T, i);
+                tasks[i] = new Task(Reader.nextInt(), Reader.nextInt(), i + 1);
             }
 
-            Arrays.sort(tasks, (task1, task2) -> {
-                long value1 = (long) task1.T * task2.S;
-                long value2 = (long) task1.S * task2.T;
+            Arrays.sort(tasks);
 
-                if (value1 == value2) {
-                    return Integer.compare(task1.index, task2.index);
-                }
-                return Long.compare(value1, value2);
-            });
-
-//            System.out.println(Arrays.toString(tasks));
             for (int i = 0; i < n; i++) {
                 System.out.print(tasks[i].index);
                 if (i < n - 1) {
@@ -56,7 +45,7 @@ public class Main {
 
             if (t < X - 1) {
                 System.out.println();
-                System.out.println();
+//                System.out.println();
             }
         }
     }
@@ -73,15 +62,15 @@ public class Main {
 
 }
 
-class Task {
-    Integer S;
+class Task implements Comparable<Task> {
     Integer T;
+    Integer S;
     int index;
 
-    public Task(int s, int t, int index) {
-        S = s;
+    public Task(int t, int s, int index) {
         T = t;
-        this.index = index + 1;
+        S = s;
+        this.index = index;
     }
 
     @Override
@@ -91,6 +80,14 @@ class Task {
                 ", T=" + T +
                 ", index=" + index +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Task o) {
+        int x = T * o.S - o.T * S;
+        if (x == 0)
+            return index - o.index;
+        return x;
     }
 }
 
